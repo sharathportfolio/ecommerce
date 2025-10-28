@@ -1,0 +1,157 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Auth Service API",
+    "description": "Auth Service with OTP and user registration",
+    "version": "1.0.0"
+  },
+  "host": "localhost:6001",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "User Authentication",
+      "description": "Endpoints for user signup, verification, login"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/user-registration": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/verify-user": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "any"
+                },
+                "otp": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "UserRegistration": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "John Doe"
+        },
+        "email": {
+          "type": "string",
+          "example": "john@example.com"
+        },
+        "password": {
+          "type": "string",
+          "example": "password123"
+        },
+        "phone_number": {
+          "type": "string",
+          "example": "1234567890"
+        },
+        "country": {
+          "type": "string",
+          "example": "India"
+        }
+      }
+    },
+    "VerifyUser": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "example": "john@example.com"
+        },
+        "otp": {
+          "type": "string",
+          "example": "1234"
+        },
+        "password": {
+          "type": "string",
+          "example": "password123"
+        },
+        "name": {
+          "type": "string",
+          "example": "John Doe"
+        }
+      }
+    }
+  },
+  "responses": {
+    "Success": {
+      "description": "Operation successful",
+      "content": {
+        "application/json": {
+          "message": "Success"
+        }
+      }
+    },
+    "BadRequest": {
+      "description": "Validation error",
+      "content": {
+        "application/json": {
+          "status": "error",
+          "message": "Validation failed"
+        }
+      }
+    },
+    "Conflict": {
+      "description": "User already exists",
+      "content": {
+        "application/json": {
+          "status": "error",
+          "message": "User already exists"
+        }
+      }
+    }
+  }
+}
