@@ -1,1 +1,26 @@
 About project1
+
+- Typescript
+- ESLint
+- Zod
+- Next Auth
+- React Hook Form
+
+-- Frontend
+- Shadcn-ui
+- Next js 15
+- React 19
+- Tailwind css
+
+-- Backend
+- PostgreSQL - neon
+- Prisma ORM
+
+-- Testing
+- Jest Testing
+
+-- Deployment
+- Vercel Development
+
+_____________________
+--legacy-peer-deps
