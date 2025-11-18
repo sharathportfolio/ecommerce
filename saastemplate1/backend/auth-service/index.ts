@@ -12,7 +12,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load swagger JSON safely
+// // Load swagger JSON safely
 const swaggerPath = path.join(__dirname, 'swagger-output.json');
 const swaggerDocument = JSON.parse(fs.readFileSync(swaggerPath, 'utf8'));
 
@@ -44,7 +44,7 @@ app.get('/docs-json', (req, res) => {
 app.use(errorMiddleware);
 
 app.get('/', (req, res) => {
-  res.send({ message: 'Hello API hu' });
+  res.send({ message: 'Hello API' });
 });
 
 const server = app.listen(port, host, () => {

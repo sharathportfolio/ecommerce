@@ -13,9 +13,10 @@ export class AppError extends Error {
     this.statusCode = statusCode;
     this.isOperational = isOperational;
     this.details = details;
-    if ((Error as any).captureStackTrace) {
-      (Error as any).captureStackTrace(this, this.constructor);
-    }
+    Error.captureStackTrace(this)
+    // if ((Error as any).captureStackTrace) {
+    //   (Error as any).captureStackTrace(this, this.constructor);
+    // }
   }
 }
 
@@ -56,7 +57,7 @@ export class DatabaseError extends AppError {
 
 // rate limit error (If user exceeds api limits)
 export class RateLimitError extends AppError {
-  constructor(message = "too many requests, please try again later") {
+  constructor(message = "Too many requests, please try again later") {
     super(message, 429);
   }
 }

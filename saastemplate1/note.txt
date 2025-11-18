@@ -1,0 +1,60 @@
+4 part
+1. 3/14
+2. 0/8
+3. 0/8
+4. 0/2
+
+command
+- npx prisma init 
+- npx prisma db push
+- openssl rand -hex 64
+
+
+dependencies
+ - npm i express-http-proxy
+ - npm i cors
+ - npm i morgan
+ - npm i express-rate-limit
+ - npm i cookie-parser
+ - npm i axios
+ - npm i swagger-ui-express
+ - npm i prisma @prisma/client
+ - npm i ioredis
+ - npm i nodemailer
+ - npm i sagger-autogen
+ 
+
+
+ devDependencies
+ - npm i @types/cookie-parser
+ - npm i @types/cors
+ - npm i @types/express
+ - npm i @types/express-http-proxy
+ - npm i @types/morgan
+ - npm i nodemon
+ - npm i @types/swagger-ui-express
+
+
+techologies
+- microservice architecture
+- express js
+- next js
+- aws (deployemnt & production)
+- mongodb (primary database)
+- redies (secondary database)
+- primsa (database orm)
+- kafka (message broker)
+- jest (api testing)
+- swagger (api docs)
+- tensorflow js (machine learning framework)
+- websocket
+- firebase (web push notification)
+- cloud provider
+- docker (containerization)
+- ci & cd
+- domain management
+
+
+
+rewatch
+2:59

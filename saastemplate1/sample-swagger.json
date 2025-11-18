@@ -28,10 +28,13 @@
               "type": "object",
               "properties": {
                 "name": {
-                  "example": "any"
+                  "example": "sharath"
                 },
                 "email": {
-                  "example": "any"
+                  "example": "sharathportfolio@gmail.com"
+                },
+                "password":{
+                  "example": "password123"
                 }
               }
             }
@@ -55,16 +58,16 @@
               "type": "object",
               "properties": {
                 "email": {
-                  "example": "any"
+                  "example": "sharathportfolio@gmail.com"
                 },
                 "otp": {
                   "example": "any"
                 },
                 "password": {
-                  "example": "any"
+                  "example": "password123"
                 },
                 "name": {
-                  "example": "any"
+                  "example": "sharath"
                 }
               }
             }
@@ -73,97 +76,6 @@
         "responses": {
           "201": {
             "description": "Created"
-          }
-        }
-      }
-    },
-    "/login-user": {
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "email": {
-                  "example": "any"
-                },
-                "password": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/forgot-password-user": {
-      "post": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/reset-password-user": {
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "email": {
-                  "example": "any"
-                },
-                "newPassword": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/verify-forgot-password-user": {
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "email": {
-                  "example": "any"
-                },
-                "otp": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
           }
         }
       }

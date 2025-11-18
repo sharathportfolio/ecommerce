@@ -4,6 +4,7 @@ import redis from '../libs/redis/index.ts';
 import { sendEmail } from './sendMail/index.ts';
 import type { Request, Response, NextFunction } from 'express';
 import prisma from '../libs/prisma/index.ts';
+
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export const validateRegistrationData = (
@@ -44,7 +45,7 @@ export const checkOtpRestrictions = async (
   }
   if (await redis.get(`otp_cooldown:${email}`)) {
     return next(
-      new ValidationError('Please wait 1minute before request a new OTP')
+      new ValidationError('Please wait 1 minute before request a new OTP')
     );
   }
 };
@@ -94,7 +95,7 @@ export const verifyOtp = async (
         'Too many failed attempts. your account is locked for 30 minutes!'
       );
     }
-    await redis.set(failedAttemptsKey, failedAttempts + 1, 'EX', 300);
+    await redis.set(failedAttemptsKey, failedAttempts + 1, 'EX', 300); // 5min
     throw new ValidationError(
       `Incorrect OTP. ${2 - failedAttempts} attempts left`
     );

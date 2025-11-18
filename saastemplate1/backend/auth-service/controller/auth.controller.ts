@@ -13,6 +13,7 @@ import { AuthError, ValidationError } from '../utils/error-handler/index.ts';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { setCookie } from '../utils/cookies/setCookie.ts';
+
 // Register a new User
 export const userRegistration = async (
   req: Request,
@@ -26,7 +27,7 @@ export const userRegistration = async (
 
     validateRegistrationData(req.body, 'user');
     const { name, email } = req.body;
-
+     
     const existingUser = await prisma.users.findUnique({ where: { email } });
     if (existingUser) {
       return next(new ValidationError('User already exists with this email'));

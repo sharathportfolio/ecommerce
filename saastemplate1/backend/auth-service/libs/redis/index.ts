@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const redis = new Redis({
-  host: process.env.REDIS_HOST || "immense-reptile-25475.upstash.io", // no https:// or rediss://
+  host: process.env.REDIS_HOST || "beloved-seagull-30923.upstash.io", // no https:// or rediss://
   port: Number(process.env.REDIS_PORT) || 6379,                       // specify port
   password: process.env.REDIS_PASSWORD,                               // your Upstash password
   tls: {},                                                             // enable TLS

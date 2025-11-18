@@ -3,13 +3,20 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+// declare global {
+//   // This prevents multiple instances of Prisma Client in development
+//   // during hot reloads
+//   var prismadb: PrismaClient | undefined;
+// }
 declare global {
   // This prevents multiple instances of Prisma Client in development
   // during hot reloads
-  var prismadb: PrismaClient | undefined;
+  namespace globalThis{
+    var prismadb: PrismaClient | undefined;
+  }
 }
 
-const prisma = global.prismadb || new PrismaClient();
+const prisma = new PrismaClient();
 
 if (process.env.NODE_ENV !== "production") global.prismadb = prisma;
 

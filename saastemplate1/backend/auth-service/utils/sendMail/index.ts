@@ -35,11 +35,11 @@ const renderEmailTemplate = async (
 export const sendEmail = async (
   to: string,
   subject: string,
-  templateNmae: string,
+  templateName: string,
   data: Record<string, any>
 ) => {
   try {
-    const html = await renderEmailTemplate(templateNmae, data);
+    const html = await renderEmailTemplate(templateName, data);
     await transporter.sendMail({
       from: `<${process.env.SMTP_USER}`,
       to,
